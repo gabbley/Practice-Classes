@@ -14,6 +14,7 @@ public class LargeInteger {
 	public static int[] add(int[] a, int[] b) {
 		int sum = 0;
 		int[] total = new int[a.length];
+		int[] digit = new int[2];
 		
 		
 		for (int i = a.length-1; i<0; i++) {
