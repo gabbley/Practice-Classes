@@ -6,22 +6,22 @@ public class LargeInteger {
 	public static void main(String[] args) {
 		
 		int[] test1 =  new int[] {1,5,3,9};
-		int[] test2 = new int[] {0, 4, 5, 2};
+		int[] test2 = new int[] {0, 4, 5, 3};
 		
 		System.out.println(Arrays.toString(add(test1, test2)));
 	}
 
 	public static int[] add(int[] a, int[] b) {
-		int sum = 0;
+		int sum;
 		int[] total = new int[a.length];
-		int[] digit = new int[2];
-		
-		
-		for (int i = a.length-1; i<0; i++) {
+
+		for (int i = a.length-1; i>0; i--) {
 			sum = a[i] + b[i];
+			int count = 2;
 			if(sum>10) {
-				total[a.length-i] = 0;
-				a[a.length-i-1] += 1;
+				total[a.length-count+1] = sum%10;
+				a[a.length-count] += sum/10;
+				count++;
 			}
 			else {
 				total[i] = sum;
@@ -30,7 +30,6 @@ public class LargeInteger {
 		}
 		return total;
 	}
-	
 
 }
 
