@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class DocumentIndex extends ArrayList<IndexEntry> {
 
-	public DocumentIndex() {
+	public DocumentIndex() { //will u need? idk
 		super();
 	}
 
@@ -35,13 +35,14 @@ public class DocumentIndex extends ArrayList<IndexEntry> {
 			// if index entry doesn't exist, inserts index entry alphabetically
 			else if (findWord.compareToIgnoreCase(word) > 0) {
 				this.add(i, new IndexEntry(word));
+				return i;
 			}
 
 		}
 
 		// otherwise just add to the end
 		this.add(new IndexEntry(word));
-		return this.size();
+		return this.size()-1; //returns new index
 	}
 
 }
