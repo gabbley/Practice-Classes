@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class IndexMaker
+public class IndexMaker // TODO replace ArrayLists
 {
   public static void main(String[] args) throws IOException
   {
@@ -35,7 +35,7 @@ public class IndexMaker
     // Create output file:
 
     if (args.length > 1)
-      fileName = args[1];
+      fileName = args[1]; 
     else
     {
       System.out.print("\nEnter output file name: ");
